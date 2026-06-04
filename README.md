@@ -45,7 +45,26 @@ POST /predict   : Mengirimkan 11 data klinis pasien untuk mendapatkan hasil pred
 GET /health    : Mengecek status kesiapan server dan model.
 
 GET /threshold : Melihat informasi threshold medis yang digunakan oleh sistem.
+Dokumentasi API: Akses ```text http://localhost:8000/docs ``` untuk mencoba endpoint secara interaktif.
 
+## Panduan Integrasi (Untuk Tim FS)Divisi Frontend/Full-Stack cukup mengirimkan 11 field data mentah ke fungsi predict_cardio() tanpa perlu melakukan scaling atau preprocessing manual.  Format JSON Input:JSON
+```
+{
+  "age": 55, "gender": 1, "height": 165, "weight": 82,
+  "ap_hi": 145, "ap_lo": 92, "cholesterol": 2, "gluc": 1,
+  "smoke": 0, "alco": 0, "active": 1
+}
+```
+Contoh Response:JSON
+```text
+{
+  "label": 1,
+  "probability": 0.9036,
+  "category": "BERISIKO TINGGI",
+  "recommendation": "Segera konsultasikan ke dokter.",
+  "top_risk_factors": ["Hipertensi", "Obesitas"]
+}
+```
 ## 🧠 Analisis Teknis
 Proyek ini mengimplementasikan Custom Layer MedicalFeatureAttention untuk memberikan bobot lebih pada fitur klinis yang krusial bagi prediksi kardiovaskular.
 
