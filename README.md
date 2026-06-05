@@ -65,6 +65,24 @@ Contoh Response:JSON
   "top_risk_factors": ["Hipertensi", "Obesitas"]
 }
 ```
+
+## Tentang Model AI (CardioCare V7 Final)
+
+Sistem prediksi risiko kardiovaskular berbasis *deep learning* yang dioptimalkan untuk performa klinis.
+
+### Spesifikasi Teknis
+| Komponen | Deskripsi |
+| :--- | :--- |
+| **Model** | `CardioCare_Final_V7` |
+| **Arsitektur** | *Functional Keras Model* dengan *Medical Feature Attention* |
+| **Input** | 24 fitur (demografi, tekanan darah, kolesterol, glukosa, & fitur komposit) |
+| **Target** | *Recall* >78% (target penasihat medis) |
+| **Loss Function** | *Clinical Asymmetric Loss* (bobot 1.5) |
+| **Scaling** | `StandardScaler` (mencegah *data leakage*) |
+| **Training** | *Early Stopping* (patience=15)|
+
+> **Catatan Integrasi:** Tim pengembang wajib merujuk ke dokumen `CardioCare_Dokumentasi_Integrasi_v7.docx` untuk pemetaan 24 variabel input. Pastikan data dikirim ke API `POST /predict` sesuai skema tersebut.
+> 
 ## 🧠 Analisis Teknis
 Proyek ini mengimplementasikan Custom Layer MedicalFeatureAttention untuk memberikan bobot lebih pada fitur klinis yang krusial bagi prediksi kardiovaskular.
 
