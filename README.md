@@ -80,9 +80,7 @@ Sistem prediksi risiko kardiovaskular berbasis *deep learning* yang dioptimalkan
 | **Loss Function** | *Clinical Asymmetric Loss* (bobot 1.5) |
 | **Scaling** | `StandardScaler` (mencegah *data leakage*) |
 | **Training** | *Early Stopping* (patience=15)|
-
-> **Catatan Integrasi:** Tim pengembang wajib merujuk ke dokumen `CardioCare_Dokumentasi_Integrasi_v7.docx` untuk pemetaan 24 variabel input. Pastikan data dikirim ke API `POST /predict` sesuai skema tersebut.
-> 
+ 
 ## 🧠 Analisis Teknis
 Proyek ini mengimplementasikan Custom Layer MedicalFeatureAttention untuk memberikan bobot lebih pada fitur klinis yang krusial bagi prediksi kardiovaskular. Sistem dirancang agar tim Frontend dapat bekerja secara efisien; cukup mengirimkan data mentah, sementara proses preprocessing dan inferensi dilakukan secara otomatis oleh inference_v7.py.
 
