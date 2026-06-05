@@ -84,9 +84,9 @@ Sistem prediksi risiko kardiovaskular berbasis *deep learning* yang dioptimalkan
 > **Catatan Integrasi:** Tim pengembang wajib merujuk ke dokumen `CardioCare_Dokumentasi_Integrasi_v7.docx` untuk pemetaan 24 variabel input. Pastikan data dikirim ke API `POST /predict` sesuai skema tersebut.
 > 
 ## 🧠 Analisis Teknis
-Proyek ini mengimplementasikan Custom Layer MedicalFeatureAttention untuk memberikan bobot lebih pada fitur klinis yang krusial bagi prediksi kardiovaskular.
+Proyek ini mengimplementasikan Custom Layer MedicalFeatureAttention untuk memberikan bobot lebih pada fitur klinis yang krusial bagi prediksi kardiovaskular. Sistem dirancang agar tim Frontend dapat bekerja secara efisien; cukup mengirimkan data mentah, sementara proses preprocessing dan inferensi dilakukan secara otomatis oleh inference_v7.py.
 
-Proses integrasi ini dirancang agar tim Frontend tidak perlu memahami kompleksitas deep learning di balik layar; cukup mengirimkan data mentah, dan model akan mengembalikan hasil prediksi yang sudah tervalidasi secara otomatis.
+Catatan Integrasi: Tim pengembang wajib merujuk ke dokumen CardioCare_Dokumentasi_Integrasi_v7.docx untuk pemetaan 24 variabel input. Seluruh aset pendukung (model, metadata, scaler) tersedia di Folder Google Drive Proyek.
 
 ## ⚖️ Disclaimer Medis
 Model ini adalah alat bantu skrining awal dan bukan pengganti diagnosis medis profesional. Setiap hasil prediksi 'BERISIKO TINGGI' wajib dikonfirmasi oleh tenaga medis melalui pemeriksaan klinis lebih lanjut.
@@ -95,3 +95,5 @@ Model ini adalah alat bantu skrining awal dan bukan pengganti diagnosis medis pr
 Keamanan: Pastikan file .env (berisi API Key Gemini jika digunakan) tidak pernah di-push ke repositori publik.
 
 Integrasi: inference_v7.py telah menangani preprocessing otomatis. Divisi Frontend hanya perlu mengirimkan dictionary berisi 11 data klinis yang tepat sesuai dengan panduan dokumentasi integrasi.
+
+> **Catatan Integrasi:** Tim pengembang wajib merujuk ke dokumen `CardioCare_Dokumentasi_Integrasi_v7.docx` untuk pemetaan 24 variabel input. Akses aset pendukung (model, metadata, scaler) tersedia di [Folder Google Drive Proyek](https://drive.google.com/drive/folders/1kcyELgWmln9VN8U5bDi17zxtGw1zk8vx).
